@@ -48,6 +48,14 @@ function viewCart() {
   return getCart().length === 0 ? "Your shopping cart is empty." : generateCartDescription();
 }
 
+function sumUpPrices() {
+  var sum = 0;
+  for (var i=0; i<getCart().length; i++) {
+    sum = sum + getCart()[i].itemPrice;
+  }
+  return sum;
+}
+
 function total() {
   var sum = sumUpPrices();
   return sum;
