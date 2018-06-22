@@ -61,6 +61,14 @@ function total() {
   return sum;
 }
 
+function searchCartForItemToRemove(itemName) {
+  var searchResult;
+  for (var i=0; i<getCart().length; i++) {
+    if (getCart()[i].itemName === itemName) {searchResult = getCart()[i]}
+  }
+  return searchResult;
+}
+
 function removeFromCart(item) {
   var itemToRemove = searchCartForItemToRemove(itemName);
   return itemToRemove ? removeItemFromCart(itemToRemove) : notifyUserThereIsNoItemToRemove();
